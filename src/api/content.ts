@@ -361,11 +361,10 @@ const resolveSharedChapters = async (
     let groupIsComplete = true;
     for (const configuredChapter of group.chapters) {
       const matches = chaptersByName.get(normalizeName(configuredChapter.name)) || [];
-      if (matches.length !== 1) {
-        console.error('Shared question-bank chapter must resolve exactly once; group disabled for this request.', {
+      if (matches.length === 0) {
+        console.error('Shared question-bank chapter must resolve; group disabled for this request.', {
           groupId: group.id,
           chapterName: configuredChapter.name,
-          matches: matches.length,
         });
         groupIsComplete = false;
         break;
