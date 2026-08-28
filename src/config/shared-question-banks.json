@@ -2,7 +2,199 @@
   "version": 1,
   "groups": [
     {
-      "id": "fcps1-medicine-past-papers",
+      "id": "fcps1-jan2026-medicine",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "January 2026",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "medicine_allied"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Medicine - Day 1", "sortOrder": 1 },
+        { "name": "Medicine - Day 2", "sortOrder": 2 },
+        { "name": "Medicine - Day 3", "sortOrder": 3 }
+      ]
+    },
+    {
+      "id": "fcps1-jan2026-surgery",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "January 2026",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "surgery_allied"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Surgery - Day 1", "sortOrder": 4 },
+        { "name": "Surgery - Day 2", "sortOrder": 5 }
+      ]
+    },
+    {
+      "id": "fcps1-jan2026-gynecology",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "January 2026",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "gynea_obs"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Gynecology & Obstetrics - Day 1", "sortOrder": 6 },
+        { "name": "Gynecology & Obstetrics - Day 2", "sortOrder": 7 },
+        { "name": "Gynecology & Obstetrics - Day 3", "sortOrder": 8 }
+      ]
+    },
+    {
+      "id": "fcps1-jan2026-radiology",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "January 2026",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "radiology"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Radiology - Day 1", "sortOrder": 9 },
+        { "name": "Radiology - Day 2", "sortOrder": 10 }
+      ]
+    },
+    {
+      "id": "fcps1-jan2026-anesthesia",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "January 2026",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "anesthesia"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Anesthesia", "sortOrder": 11 }
+      ]
+    },
+    {
+      "id": "fcps1-aug2025-medicine",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "August 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "medicine_allied"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Medicine Evening - 4 August 2025", "sortOrder": 1 },
+        { "name": "Medicine Morning - 5 August 2025", "sortOrder": 2 },
+        { "name": "Medicine Evening - 5 August 2025", "sortOrder": 3 },
+        { "name": "Medicine Morning - 6 August 2025", "sortOrder": 4 },
+        { "name": "Medicine Evening - 6 August 2025", "sortOrder": 5 }
+      ]
+    },
+    {
+      "id": "fcps1-aug2025-surgery",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "August 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "surgery_allied"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Surgery Evening - 6 August 2025", "sortOrder": 6 },
+        { "name": "Surgery Morning - 7 August 2025", "sortOrder": 7 }
+      ]
+    },
+    {
+      "id": "fcps1-aug2025-gynecology",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "August 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "gynea_obs"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Gynae Morning - 6 August 2025", "sortOrder": 8 },
+        { "name": "Gynae Evening - 7 August 2025", "sortOrder": 9 }
+      ]
+    },
+    {
+      "id": "fcps1-aug2025-radiology",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "August 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "radiology"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Radiology Evening - 4 August 2025", "sortOrder": 11 }
+      ]
+    },
+    {
+      "id": "fcps1-aug2025-anesthesia",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "August 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "anesthesia"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Anaesthesia Morning - 4 August 2025", "sortOrder": 12 }
+      ]
+    },
+    {
+      "id": "fcps1-apr2026-medicine",
       "enabled": true,
       "sourceSubject": {
         "name": "April 2026",
@@ -16,11 +208,15 @@
       "includeInSubjectPractice": true,
       "contentType": "past_paper",
       "chapters": [
+        { "name": "Medicine - 7th April (M)", "sortOrder": 1 },
+        { "name": "Medicine - 8th April (M)", "sortOrder": 2 },
+        { "name": "Medicine - 8th April (N)", "sortOrder": 3 },
+        { "name": "Medicine - 9th April (M)", "sortOrder": 4 },
         { "name": "Question Bank - Medicine", "sortOrder": 9 }
       ]
     },
     {
-      "id": "fcps1-surgery-past-papers",
+      "id": "fcps1-apr2026-surgery",
       "enabled": true,
       "sourceSubject": {
         "name": "April 2026",
@@ -34,29 +230,13 @@
       "includeInSubjectPractice": true,
       "contentType": "past_paper",
       "chapters": [
-        { "name": "Question Bank - Surgery", "sortOrder": 9 }
+        { "name": "Surgery - 7th April (N)", "sortOrder": 6 },
+        { "name": "Surgery - 8th April (M)", "sortOrder": 7 },
+        { "name": "Question Bank - Surgery", "sortOrder": 10 }
       ]
     },
     {
-      "id": "fcps1-radiology-past-papers",
-      "enabled": true,
-      "sourceSubject": {
-        "name": "April 2026",
-        "instituteCode": "fcps_part_1"
-      },
-      "targets": {
-        "mode": "specialty_for_institute",
-        "instituteCode": "fcps_part_1",
-        "specialty": "radiology"
-      },
-      "includeInSubjectPractice": true,
-      "contentType": "past_paper",
-      "chapters": [
-        { "name": "Question Bank - Radiology", "sortOrder": 9 }
-      ]
-    },
-    {
-      "id": "fcps1-gynecology-past-papers",
+      "id": "fcps1-apr2026-gynecology",
       "enabled": true,
       "sourceSubject": {
         "name": "April 2026",
@@ -70,7 +250,226 @@
       "includeInSubjectPractice": true,
       "contentType": "past_paper",
       "chapters": [
-        { "name": "Question Bank - Gynecology", "sortOrder": 9 }
+        { "name": "Gyne - 8th April (M)", "sortOrder": 8 },
+        { "name": "Question Bank - Gynecology", "sortOrder": 12 }
+      ]
+    },
+    {
+      "id": "fcps1-apr2026-radiology",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "April 2026",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "radiology"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Question Bank - Radiology", "sortOrder": 11 }
+      ]
+    },
+    {
+      "id": "fcps1-feb2025-medicine",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "February 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "medicine_allied"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Medicine 7 February Afternoon", "sortOrder": 1 },
+        { "name": "Medicine 8 February Afternoon", "sortOrder": 2 },
+        { "name": "Medicine 8 February Morning", "sortOrder": 3 },
+        { "name": "Medicine 9 February Morning", "sortOrder": 4 },
+        { "name": "Medicine - 9 Feb (E)", "sortOrder": 8 }
+      ]
+    },
+    {
+      "id": "fcps1-feb2025-surgery",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "February 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "surgery_allied"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Surgery - 8 Feb (E)", "sortOrder": 7 }
+      ]
+    },
+    {
+      "id": "fcps1-feb2025-gynecology",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "February 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "gynea_obs"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Gyn & Obs - 8 Feb (M)", "sortOrder": 9 }
+      ]
+    },
+    {
+      "id": "fcps1-feb2025-radiology",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "February 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "radiology"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Radiology 7 February Morning", "sortOrder": 6 }
+      ]
+    },
+    {
+      "id": "fcps1-feb2025-anesthesia",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "February 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "anesthesia"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Anesthesia 7 February Morning", "sortOrder": 5 }
+      ]
+    },
+    {
+      "id": "fcps1-may2025-medicine",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "May 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "medicine_allied"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Medicine 12 May Afternoon", "sortOrder": 1 },
+        { "name": "Medicine - May 15 (M)", "sortOrder": 2 },
+        { "name": "Medicine - May 13 (M)", "sortOrder": 3 },
+        { "name": "Medicine - May 13 (E)", "sortOrder": 4 },
+        { "name": "Medicine - May 15 (M+E)", "sortOrder": 5 },
+        { "name": "Medicine -13 May (N)", "sortOrder": 9 },
+        { "name": "Medicine - 14 May (M)", "sortOrder": 10 },
+        { "name": "Medicine - 14 May (E)", "sortOrder": 18 }
+      ]
+    },
+    {
+      "id": "fcps1-may2025-surgery",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "May 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "surgery_allied"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Surgery - 13 May", "sortOrder": 6 },
+        { "name": "Surgery - 14 May", "sortOrder": 7 },
+        { "name": "Surgery 12  May Afternoon", "sortOrder": 11 },
+        { "name": "Surgery 14 May Afternoon", "sortOrder": 12 },
+        { "name": "Surgery - 13 May (E)", "sortOrder": 13 },
+        { "name": "Surgery - 9 May (M)", "sortOrder": 14 }
+      ]
+    },
+    {
+      "id": "fcps1-may2025-gynecology",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "May 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "gynea_obs"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Gyn & Obs - 14 Fem (M)", "sortOrder": 19 },
+        { "name": "Gyn & Obs - 13 Feb (M)", "sortOrder": 20 }
+      ]
+    },
+    {
+      "id": "fcps1-may2025-radiology",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "May 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "radiology"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Radiology - 12 May (M)", "sortOrder": 15 },
+        { "name": "Radiology - 12 May (E)", "sortOrder": 16 },
+        { "name": "Radiology - 11 May (M)", "sortOrder": 17 }
+      ]
+    },
+    {
+      "id": "fcps1-may2025-anesthesia",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "May 2025",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "anesthesia"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Anesthesia - 14 May", "sortOrder": 8 },
+        { "name": "Anesthesia - 12 May (E)", "sortOrder": 21 }
       ]
     }
   ]
