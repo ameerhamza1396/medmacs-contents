@@ -202,7 +202,14 @@ const normalizeSeqs = (rows: any[] | null) => (rows || []).map(seq => ({
 
 const setCors = (req: ContentRequest, res: ContentResponse) => {
   const origin = getStringHeader(req.headers.origin);
-  if (origin && allowedOrigins.has(origin)) {
+  const isAllowed = origin && (
+    allowedOrigins.has(origin) ||
+    origin.endsWith('.medmacs.app') ||
+    origin.endsWith('.netlify.app') ||
+    /^https?:\/\/localhost(:\d+)?$/i.test(origin)
+  );
+
+  if (isAllowed && origin) {
     res.setHeader('Access-Control-Allow-Origin', origin);
   } else {
     res.setHeader('Access-Control-Allow-Origin', '*');
