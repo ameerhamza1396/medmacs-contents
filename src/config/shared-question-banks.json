@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "groups": [
+    {
+      "id": "fcps1-medicine-past-papers",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "April 2026",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "medicine_allied"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Question Bank - Medicine", "sortOrder": 9 }
+      ]
+    },
+    {
+      "id": "fcps1-surgery-past-papers",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "April 2026",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "surgery_allied"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Question Bank - Surgery", "sortOrder": 9 }
+      ]
+    },
+    {
+      "id": "fcps1-radiology-past-papers",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "April 2026",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "radiology"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Question Bank - Radiology", "sortOrder": 9 }
+      ]
+    },
+    {
+      "id": "fcps1-gynecology-past-papers",
+      "enabled": true,
+      "sourceSubject": {
+        "name": "April 2026",
+        "instituteCode": "fcps_part_1"
+      },
+      "targets": {
+        "mode": "specialty_for_institute",
+        "instituteCode": "fcps_part_1",
+        "specialty": "gynea_obs"
+      },
+      "includeInSubjectPractice": true,
+      "contentType": "past_paper",
+      "chapters": [
+        { "name": "Question Bank - Gynecology", "sortOrder": 9 }
+      ]
+    }
+  ]
+}
