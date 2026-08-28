@@ -222,7 +222,8 @@ const setCors = (req: ContentRequest, res: ContentResponse) => {
 
 const getUserProfile = async (client: any) => {
   const { data: userData, error: userError } = await client.auth.getUser();
-  if (userError || !userData.user) {
+  if (userError || !userData?.user) {
+    console.error('getUser failed:', userError);
     return null;
   }
 
@@ -233,6 +234,7 @@ const getUserProfile = async (client: any) => {
     .single();
 
   if (profileError || !profile) {
+    console.error('get profile row failed:', profileError);
     return null;
   }
 
@@ -256,6 +258,7 @@ const getInstituteScope = async (client: any, institute?: string | null): Promis
 const fetchScopedSubjects = async (client: any, table: string) => {
   const profile = await getUserProfile(client);
   if (!profile?.institute) {
+    console.error('fetchScopedSubjects: Profile or institute missing', { profile });
     return [];
   }
 
@@ -264,7 +267,15 @@ const fetchScopedSubjects = async (client: any, table: string) => {
   const normalizedProfileYear = String(profile?.year || '').trim();
   const effectiveYear = normalizedProfileYear || null;
 
+  console.log('fetchScopedSubjects status:', {
+    institute: profile.institute,
+    yearOptions,
+    profileYear: profile.year,
+    effectiveYear
+  });
+
   if (yearOptions.length > 0 && !effectiveYear) {
+    console.warn('fetchScopedSubjects: Profile year is required but not selected');
     return [];
   }
 
@@ -411,6 +422,15 @@ export default async function handler(req: ContentRequest, res: ContentResponse)
   const subjectId = getStringQuery(req.query.subjectId);
   const chapterId = getStringQuery(req.query.chapterId);
   const authorization = getStringHeader(req.headers.authorization);
+
+  console.log('API Request received:', {
+    resource,
+    subjectId,
+    chapterId,
+    hasAuthHeader: Boolean(authorization),
+    authHeaderSample: authorization ? `${authorization.substring(0, 15)}...` : undefined,
+    allHeaderKeys: Object.keys(req.headers)
+  });
 
   const client = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
     global: authorization ? { headers: { Authorization: authorization } } : undefined,
