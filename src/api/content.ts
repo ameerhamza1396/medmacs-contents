@@ -509,7 +509,27 @@ export default async function handler(req: ContentRequest, res: ContentResponse)
         if (!chapterScope?.subject_id) return res.status(404).json({ error: 'Chapter not found' });
 
         const visibleSubject = await fetchVisibleSubject(client, chapterScope.subject_id);
-        if (!visibleSubject) return res.status(404).json({ error: 'Chapter not found' });
+        if (!visibleSubject) {
+          // Shared chapters (past papers) may belong to a source subject that
+          // isn't directly visible because fetchScopedSubjects filters by year.
+          // Allow access if the parent subject is a shared source for this institute.
+          const profile = await getUserProfile(client);
+          const userInstitute = normalizeInstitute(profile?.institute);
+          if (!userInstitute) return res.status(404).json({ error: 'Chapter not found' });
+
+          const { data: sourceSubject } = await client
+            .from('subjects')
+            .select('name, institutes')
+            .eq('id', chapterScope.subject_id)
+            .maybeSingle();
+          if (!sourceSubject) return res.status(404).json({ error: 'Chapter not found' });
+
+          const isSharedSource = getSharedQuestionBankGroups().some(group =>
+            group.sourceSubject.instituteCode === userInstitute
+            && normalizeName(sourceSubject.name) === normalizeName(group.sourceSubject.name)
+          );
+          if (!isSharedSource) return res.status(404).json({ error: 'Chapter not found' });
+        }
 
         const { data, error } = await client
           .from('mcqs')
