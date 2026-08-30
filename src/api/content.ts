@@ -550,6 +550,48 @@ export default async function handler(req: ContentRequest, res: ContentResponse)
         return res.status(200).json({ data: normalizeMcqs(data) });
       }
 
+      case 'mcqs-by-subjects': {
+        const subjectIdsStr = getStringQuery(req.query.subjectIds);
+        if (!subjectIdsStr) return res.status(400).json({ error: 'subjectIds is required' });
+        const subjectIds = subjectIdsStr.split(',').filter(Boolean);
+        if (subjectIds.length === 0) return res.status(200).json({ data: [] });
+
+        // Retrieve the scoped/visible subjects
+        const allScopedSubjects = await fetchScopedSubjects(client, 'subjects') as SubjectRow[];
+        const visibleSubjects = allScopedSubjects.filter(subj => subjectIds.includes(subj.id));
+
+        if (visibleSubjects.length === 0) return res.status(200).json({ data: [] });
+
+        // Get all chapters for these subjects
+        const { data: chapters, error: chaptersError } = await client
+          .from('chapters')
+          .select('id, subject_id')
+          .in('subject_id', visibleSubjects.map(s => s.id));
+        if (chaptersError) throw chaptersError;
+
+        // Resolve shared chapters for each visible subject
+        const allSharedChaptersPromises = visibleSubjects.map(subj => resolveSharedChapters(client, subj, true));
+        const sharedChaptersArrays = await Promise.all(allSharedChaptersPromises);
+        const sharedChapters = sharedChaptersArrays.flat();
+
+        const chapterIds = [...new Set([
+          ...(chapters || []).map((chapter: any) => chapter.id),
+          ...sharedChapters.map(chapter => chapter.id),
+        ])];
+
+        if (chapterIds.length === 0) {
+          return res.status(200).json({ data: [] });
+        }
+
+        const { data, error } = await client
+          .from('mcqs')
+          .select('*')
+          .in('chapter_id', chapterIds);
+        if (error) throw error;
+
+        return res.status(200).json({ data: normalizeMcqs(data) });
+      }
+
       case 'app-seq-subjects': {
         return res.status(200).json({ data: await fetchScopedSubjects(client, 'seqs_subjects') });
       }
